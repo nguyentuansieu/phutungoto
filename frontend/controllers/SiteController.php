@@ -118,15 +118,9 @@ class SiteController extends Controller
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-<<<<<<< HEAD
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending email.');
-=======
                 Yii::$app->session->setFlash('success', 'Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất.');
             } else {
                 Yii::$app->session->setFlash('error', 'Có lỗi trong quá trình gửi mail.');
->>>>>>> 7a8b7d089007b8e390152c511b7569359845b627
             }
 
             return $this->refresh();

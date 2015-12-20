@@ -54,9 +54,6 @@ class CategoryController extends \frontend\controllers\FrontendController
 
     private static function getProduct($categoryID)
     {
-<<<<<<< HEAD
-        $productModel = Product::find()->where(['category_id' => $categoryID]);
-=======
         $categoryModel = Category::findOne(['id' => $categoryID])->children()->all();
         $categories = array();
         $categories[] = $categoryID;
@@ -64,7 +61,6 @@ class CategoryController extends \frontend\controllers\FrontendController
             $categories[] = $category->id;
         endforeach;
         $productModel = Product::find()->where(['in', 'category_id', $categories]);
->>>>>>> 7a8b7d089007b8e390152c511b7569359845b627
         $count = $productModel->count();
         $pagination = new Pagination(['totalCount' => $count]);
         $nodes = $productModel->offset($pagination->offset)

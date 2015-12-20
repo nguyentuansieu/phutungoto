@@ -30,93 +30,6 @@ $this->title = 'Phụ tùng ô tô tải | Phụ tùng ô tô con | Phụ tùng 
       <div class="row tab-content">
           <!-- Oto con -->
         <div role="tabpanel" class="tab-pane fade in active" id="oto-con">
-<<<<<<< HEAD
-            <?php $otoCon = FrontendController::getProductByCategory(3); ?>
-            <div class="clearfix">
-                <?php $i=0; foreach ($otoCon as $node) : ?>
-                <?php if($i!=0 && $i%3 == 0): ?>
-                    </div><div class="clearfix">
-                <?php endif; ?>
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                      <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                          'product/view', 'slug'=> $node->slug
-                      ]); ?>
-                    </div>
-                    <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                          'product/view', 'slug' => $node->slug
-                      ]); ?>
-                    </h5>
-                </div><!--One Item-->
-                <?php $i++; endforeach; ?>
-            </div>
-        </div>
-            <!-- Oto con tsk-tbk -->
-          <div role="tabpanel" class="tab-pane fade" id="oto-con-tsk-tbk">
-              <?php $otoCon = FrontendController::getProductByCategory(4); ?>
-              <div class="clearfix">
-                  <?php $i=0; foreach ($otoCon as $node) : ?>
-                  <?php if($i!=0 && $i%3 == 0): ?>
-                      </div><div class="clearfix">
-                  <?php endif; ?>
-                  <div class="col-lg-4">
-                      <div class="thumbnail">
-                        <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                            'product/view', 'slug'=> $node->slug
-                        ]); ?>
-                      </div>
-                      <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                            'product/view', 'slug' => $node->slug
-                        ]); ?>
-                      </h5>
-                  </div><!--One Item-->
-                  <?php $i++; endforeach; ?>
-              </div>
-          </div>
-          <!-- Oto con miyaco -->
-        <div role="tabpanel" class="tab-pane fade" id="oto-con-miyaco">
-            <?php $otoCon = FrontendController::getProductByCategory(5); ?>
-            <div class="clearfix">
-                <?php $i=0; foreach ($otoCon as $node) : ?>
-                <?php if($i!=0 && $i%3 == 0): ?>
-                    </div><div class="clearfix">
-                <?php endif; ?>
-                <div class="col-lg-4">
-                    <div class="thumbnail">
-                      <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                          'product/view', 'slug'=> $node->slug
-                      ]); ?>
-                    </div>
-                    <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                          'product/view', 'slug' => $node->slug
-                      ]); ?>
-                    </h5>
-                </div><!--One Item-->
-                <?php $i++; endforeach; ?>
-            </div>
-        </div>
-        <!-- Oto con oto-con-ctr -->
-          <div role="tabpanel" class="tab-pane fade" id="oto-con-ctr">
-              <?php $otoCon = FrontendController::getProductByCategory(6); ?>
-              <div class="clearfix">
-                  <?php $i=0; foreach ($otoCon as $node) : ?>
-                  <?php if($i!=0 && $i%3 == 0): ?>
-                      </div><div class="clearfix">
-                  <?php endif; ?>
-                  <div class="col-lg-4">
-                      <div class="thumbnail">
-                        <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                            'product/view', 'slug'=> $node->slug
-                        ]); ?>
-                      </div>
-                      <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                            'product/view', 'slug' => $node->slug
-                        ]); ?>
-                      </h5>
-                  </div><!--One Item-->
-                  <?php $i++; endforeach; ?>
-              </div>
-=======
           <?=\common\onecms\FrontProductWidget::widget(['category_id' => 3]); ?>
         </div>
             <!-- Oto con tsk-tbk -->
@@ -130,7 +43,6 @@ $this->title = 'Phụ tùng ô tô tải | Phụ tùng ô tô con | Phụ tùng 
         <!-- Oto con oto-con-ctr -->
           <div role="tabpanel" class="tab-pane fade" id="oto-con-ctr">
             <?=\common\onecms\FrontProductWidget::widget(['category_id' => 6]); ?>
->>>>>>> 7a8b7d089007b8e390152c511b7569359845b627
           </div>
       </div>
     </div>
@@ -146,93 +58,6 @@ $this->title = 'Phụ tùng ô tô tải | Phụ tùng ô tô con | Phụ tùng 
       <div class="row tab-content">
           <!-- Oto tai -->
           <div role="tabpanel" class="tab-pane fade in active" id="oto-tai">
-<<<<<<< HEAD
-              <?php $otoCon = FrontendController::getProductByCategory(7); ?>
-              <div class="clearfix">
-                  <?php $i=0; foreach ($otoCon as $node) : ?>
-                  <?php if($i!=0 && $i%3 == 0): ?>
-                      </div><div class="clearfix">
-                  <?php endif; ?>
-                  <div class="col-lg-4">
-                      <div class="thumbnail">
-                        <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                            'product/view', 'slug'=> $node->slug
-                        ]); ?>
-                      </div>
-                      <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                            'product/view', 'slug' => $node->slug
-                        ]); ?>
-                      </h5>
-                  </div><!--One Item-->
-                  <?php $i++; endforeach; ?>
-              </div>
-          </div>
-          <!-- Oto tai tsk,tsb -->
-          <div role="tabpanel" class="tab-pane fade" id="oto-tai-tsk">
-              <?php $otoCon = FrontendController::getProductByCategory(8); ?>
-              <div class="clearfix">
-                  <?php $i=0; foreach ($otoCon as $node) : ?>
-                  <?php if($i!=0 && $i%3 == 0): ?>
-                      </div><div class="clearfix">
-                  <?php endif; ?>
-                  <div class="col-lg-4">
-                      <div class="thumbnail">
-                        <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                            'product/view', 'slug'=> $node->slug
-                        ]); ?>
-                      </div>
-                      <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                            'product/view', 'slug' => $node->slug
-                        ]); ?>
-                      </h5>
-                  </div><!--One Item-->
-                  <?php $i++; endforeach; ?>
-              </div>
-          </div>
-          <!-- Oto tai tsk,tsb -->
-          <div role="tabpanel" class="tab-pane fade" id="oto-tai-kyb">
-              <?php $otoCon = FrontendController::getProductByCategory(9); ?>
-              <div class="clearfix">
-                  <?php $i=0; foreach ($otoCon as $node) : ?>
-                  <?php if($i!=0 && $i%3 == 0): ?>
-                      </div><div class="clearfix">
-                  <?php endif; ?>
-                  <div class="col-lg-4">
-                      <div class="thumbnail">
-                        <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                            'product/view', 'slug'=> $node->slug
-                        ]); ?>
-                      </div>
-                      <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                            'product/view', 'slug' => $node->slug
-                        ]); ?>
-                      </h5>
-                  </div><!--One Item-->
-                  <?php $i++; endforeach; ?>
-              </div>
-          </div>
-          <!-- Oto tai miyaco -->
-          <div role="tabpanel" class="tab-pane fade" id="oto-tai-miyaco">
-              <?php $otoCon = FrontendController::getProductByCategory(10); ?>
-              <div class="clearfix">
-                  <?php $i=0; foreach ($otoCon as $node) : ?>
-                  <?php if($i!=0 && $i%3 == 0): ?>
-                      </div><div class="clearfix">
-                  <?php endif; ?>
-                  <div class="col-lg-4">
-                      <div class="thumbnail">
-                        <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                            'product/view', 'slug'=> $node->slug
-                        ]); ?>
-                      </div>
-                      <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                            'product/view', 'slug' => $node->slug
-                        ]); ?>
-                      </h5>
-                  </div><!--One Item-->
-                  <?php $i++; endforeach; ?>
-              </div>
-=======
             <?=\common\onecms\FrontProductWidget::widget(['category_id' => 7]); ?>
           </div>
           <!-- Oto tai tsk,tsb -->
@@ -246,7 +71,6 @@ $this->title = 'Phụ tùng ô tô tải | Phụ tùng ô tô con | Phụ tùng 
           <!-- Oto tai miyaco -->
           <div role="tabpanel" class="tab-pane fade" id="oto-tai-miyaco">
             <?=\common\onecms\FrontProductWidget::widget(['category_id' => 10]); ?>
->>>>>>> 7a8b7d089007b8e390152c511b7569359845b627
           </div>
       </div>
     </div>
@@ -263,115 +87,6 @@ $this->title = 'Phụ tùng ô tô tải | Phụ tùng ô tô con | Phụ tùng 
       <div class="row tab-content">
                 <!-- Oto tai miyaco -->
                 <div role="tabpanel" class="tab-pane fade in active" id="may-xay-dung">
-<<<<<<< HEAD
-                  <?php $otoCon = FrontendController::getProductByCategory(12); ?>
-                  <div class="clearfix">
-                      <?php $i=0; foreach ($otoCon as $node) : ?>
-                      <?php if($i!=0 && $i%3 == 0): ?>
-                          </div><div class="clearfix">
-                      <?php endif; ?>
-                      <div class="col-lg-4">
-                          <div class="thumbnail">
-                            <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                                'product/view', 'slug'=> $node->slug
-                            ]); ?>
-                          </div>
-                          <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                                'product/view', 'slug' => $node->slug
-                            ]); ?>
-                          </h5>
-                      </div><!--One Item-->
-                      <?php $i++; endforeach; ?>
-                  </div>
-                </div>
-                <!-- Oto tai miyaco -->
-                <div role="tabpanel" class="tab-pane fade" id="may-xay-dung-teikoku">
-                  <?php $otoCon = FrontendController::getProductByCategory(11); ?>
-                  <div class="clearfix">
-                      <?php $i=0; foreach ($otoCon as $node) : ?>
-                      <?php if($i!=0 && $i%3 == 0): ?>
-                          </div><div class="clearfix">
-                      <?php endif; ?>
-                      <div class="col-lg-4">
-                          <div class="thumbnail">
-                            <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                                'product/view', 'slug'=> $node->slug
-                            ]); ?>
-                          </div>
-                          <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                                'product/view', 'slug' => $node->slug
-                            ]); ?>
-                          </h5>
-                      </div><!--One Item-->
-                      <?php $i++; endforeach; ?>
-                  </div>
-                </div>
-                <!-- Oto tai miyaco -->
-                <div role="tabpanel" class="tab-pane fade" id="may-xay-dung-nikko">
-                  <?php $otoCon = FrontendController::getProductByCategory(13); ?>
-                  <div class="clearfix">
-                      <?php $i=0; foreach ($otoCon as $node) : ?>
-                      <?php if($i!=0 && $i%3 == 0): ?>
-                          </div><div class="clearfix">
-                      <?php endif; ?>
-                      <div class="col-lg-4">
-                          <div class="thumbnail">
-                            <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                                'product/view', 'slug'=> $node->slug
-                            ]); ?>
-                          </div>
-                          <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                                'product/view', 'slug' => $node->slug
-                            ]); ?>
-                          </h5>
-                      </div><!--One Item-->
-                      <?php $i++; endforeach; ?>
-                  </div>
-                </div>
-                <!-- Oto tai miyaco -->
-                <div role="tabpanel" class="tab-pane fade" id="may-xay-dung-komatsu">
-                  <?php $otoCon = FrontendController::getProductByCategory(14); ?>
-                  <div class="clearfix">
-                      <?php $i=0; foreach ($otoCon as $node) : ?>
-                      <?php if($i!=0 && $i%3 == 0): ?>
-                          </div><div class="clearfix">
-                      <?php endif; ?>
-                      <div class="col-lg-4">
-                          <div class="thumbnail">
-                            <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                                'product/view', 'slug'=> $node->slug
-                            ]); ?>
-                          </div>
-                          <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                                'product/view', 'slug' => $node->slug
-                            ]); ?>
-                          </h5>
-                      </div><!--One Item-->
-                      <?php $i++; endforeach; ?>
-                  </div>
-                </div>
-                <!-- Oto tai miyaco -->
-                <div role="tabpanel" class="tab-pane fade" id="may-xay-dung-kawasaki">
-                  <?php $otoCon = FrontendController::getProductByCategory(15); ?>
-                  <div class="clearfix">
-                      <?php $i=0; foreach ($otoCon as $node) : ?>
-                      <?php if($i!=0 && $i%3 == 0): ?>
-                          </div><div class="clearfix">
-                      <?php endif; ?>
-                      <div class="col-lg-4">
-                          <div class="thumbnail">
-                            <?= HTML::a(Yii::$app->imageCache->thumb($node->image, 'post'), [
-                                'product/view', 'slug'=> $node->slug
-                            ]); ?>
-                          </div>
-                          <h5 class="grid-product-title"><?=HTML::a($node->title, [
-                                'product/view', 'slug' => $node->slug
-                            ]); ?>
-                          </h5>
-                      </div><!--One Item-->
-                      <?php $i++; endforeach; ?>
-                  </div>
-=======
                   <?=\common\onecms\FrontProductWidget::widget(['category_id' => 12]); ?>
                 </div>
                 <!-- Oto tai miyaco -->
@@ -389,7 +104,6 @@ $this->title = 'Phụ tùng ô tô tải | Phụ tùng ô tô con | Phụ tùng 
                 <!-- Oto tai miyaco -->
                 <div role="tabpanel" class="tab-pane fade" id="may-xay-dung-kawasaki">
                   <?=\common\onecms\FrontProductWidget::widget(['category_id' => 15]); ?>
->>>>>>> 7a8b7d089007b8e390152c511b7569359845b627
                 </div>
           </div>
       </div>
