@@ -1,0 +1,179 @@
+<?php
+
+namespace backend\controllers;
+
+use Yii;
+use common\models\Product;
+use backend\models\ProductSearch;
+use backend\controllers\BackendController;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+use common\models\Category;
+/**
+ * ProductController implements the CRUD actions for Product model.
+ */
+class ProductController extends BackendController
+{
+	const IN_STOCK = 10;
+	const OUT_STOCK = 20;
+	const COMMING_SOON = 30;
+	const HOTLINE_1 = '0981 553 639';
+	const HOTLINE_2 = '0975 555 529';
+	const HOTLINE_3 = '0913 580 191 - 0985 163 667';
+	const ACTIVE = 10;
+	const DEACTIVED = 20;
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['post'],
+                ],
+            ],
+        ];
+    }
+	
+	public function getStateStock() {
+		return [
+			self::IN_STOCK => 'Còn hàng',
+			self::OUT_STOCK => 'Hết hàng',
+			self::COMMING_SOON => 'Sắp có hàng'
+		];
+	}
+	
+	public function getHotline() {
+		return [
+			self::HOTLINE_1 => 'HỖ TRỢ PHỤ TÙNG XE Ô TÔ CON',
+			self::HOTLINE_2 => 'HỖ TRỢ PHỤ TÙNG XE Ô TÔ TẢI',
+			self::HOTLINE_3 => 'HỖ TRỢ PHỤ TÙNG MÁY XÂY DỰNG',
+		];
+	}
+	
+	public function getStatus() {
+		return [
+			self::ACTIVE => 'Đồng ý',
+			self::DEACTIVED => 'Không đồng ý',
+		];
+	}
+
+    /**
+     * Lists all Product models.
+     * @return mixed
+     */
+    public function actionIndex()
+    {
+        $searchModel = new ProductSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
+     * Displays a single Product model.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionView($id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new Product model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate()
+    {
+        $model = new Product();
+        $parents = [];
+        $root = Category::findOne(['parent_id' => null, 'title' => 'product', 'module' => 'product']);
+        if (empty($root)) {
+            throw new NotFoundHttpException('Module không tồn tại');
+        }
+        $parents = $root->children()->all();
+        $parent_id = $this->buildTree($parents);
+        if ($model->load(Yii::$app->request->post())) {
+            $model['slug'] =  $this->slugAlias($model);
+			
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+                'parent_id' => $parent_id,
+				'statestock' => $this->getStateStock(),
+				'hotline' => $this->getHotline(),
+				'state' => $this->getStatus(),
+            ]);
+        }
+    }
+
+    /**
+     * Updates an existing Product model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+        $parents = [];
+        $root = Category::findOne(['parent_id' => null, 'title' => 'product', 'module' => 'product']);
+        if (empty($root)) {
+            throw new NotFoundHttpException('Module không tồn tại');
+        }
+        $parents = $root->children()->all();
+        $parent_id = $this->buildTree($parents);
+        if ($model->load(Yii::$app->request->post())) {
+            $model['slug'] =  $this->slugAlias($model);
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+                'parent_id' => $parent_id,
+				'statestock' => $this->getStateStock(),
+				'hotline' => $this->getHotline(),
+				'state' => $this->getStatus(),
+            ]);
+        }
+    }
+
+    /**
+     * Deletes an existing Product model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
+    }
+
+    /**
+     * Finds the Product model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Product the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Product::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+}

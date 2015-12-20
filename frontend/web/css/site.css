@@ -1,0 +1,235 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+	background-color: rgba(0, 0, 0, .075);
+}
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -40px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+}
+
+.footer {
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    font-size: 95%;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+.header {
+    padding: 10px 0;
+}
+
+.phone {
+    display: block;
+    margin-top: 10px;
+}
+
+.phone .fa.fa-phone-square {
+  font-size: 35px;
+  color: #F47C20;
+}
+
+.phone .phone-box {
+    display: inline-block;
+    line-height: 5px;
+}
+
+.phone .phone-box strong {
+    color: #2e3a47;
+    font-size: 12px;
+    font-weight: bold !important;
+    line-height: 1em;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.phone span {
+    line-height: 25px;
+}
+.navigation.navbar {
+}
+.navbar-inverse {
+  background-color: transparent;
+  border-color: #F47C20;
+  border-bottom-width: 2px;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #333;
+    font-weight: 700;
+    margin-right: 10px;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #F47C20;
+  border-radius: 10px 10px 0 0;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #F47C20;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #F47C20;
+  border-radius: 10px 10px 0 0;
+}
+.panel.panel-primary .panel-heading {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.panel.panel-body {
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-radius: 0 0 5px 5px;
+}
+.panel.panel-body h4 {
+  font-size: 110%;
+  font-weight: 600;
+}
+
+.category-block li {
+  position: relative;
+  padding-left: 10px;
+  border-bottom: 1px solid #eaeaea;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.category-block a {
+  color: #333;
+}
+.category-block a:hover {
+  color: #f17837;
+  text-decoration: none;
+}
+
+.n-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.n-description {
+    text-align: justify;
+}
+.grid-product-title {
+    text-align: center;
+}
+.grid-product-title a {
+    color: #333;
+}
+
+.n-description img {
+	width: 100% !important;
+	height: auto !important;
+}
+
+.tuvan {
+	height: 42px;
+    line-height: 42px;
+    position: relative;
+    background-color: #029900;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    padding: 0 20px;
+    margin-right: 14px;
+}
+
+.col-lg-25 {
+	width: 25%;
+	min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+	float: left;
+}
+
+.partner-item-heading {
+	text-align: center;
+	font-size: 14px;
+}
+
+.partner-item-heading a {
+	color: #333;
+}

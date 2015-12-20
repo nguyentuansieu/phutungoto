@@ -1,0 +1,27 @@
+{
+  "name": "sieulog/yii2-adminlte",
+  "authors": [
+    {
+      "name": "Nguyen Tuan Sieu",
+      "email": "tuan@sieulog.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*",
+    "bower-asset/admin-lte": "^2.3",
+    "bower-asset/fontawesome": "^4.4",
+    "bower-asset/ionicons": "^2.0",
+    "bower-asset/jquery": "^2.1"
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "sieulog\\adminlte\\": ""
+    }
+  }
+}
