@@ -49,10 +49,18 @@ AppAsset::register($this);
 			  </div>
 			</div>
 		</div>
+<<<<<<< HEAD
 		<!--
 		<div class="row">
 			<h4>Chuyên kinh doanh và phân phối phụ tùng ô tô, máy xây dựng nhập khẩu chính hãng xuất xứ Nhật Bản tại Việt Nam</h4>
 		</div>-->
+=======
+		<div class="row">
+          <marquee scrollamount="2" behavior="alternate" direction="right" onmouseover="this.stop();" onmouseout="this.start();">
+            <h4 class="greeting">Chuyên kinh doanh và phân phối phụ tùng ô tô, máy xây dựng nhập khẩu chính hãng xuất xứ Nhật Bản tại Việt Nam</h4>
+          </marquee>
+		</div>
+>>>>>>> 7a8b7d089007b8e390152c511b7569359845b627
     </div>
   </header>
   <nav class="navigation navbar navbar-inverse navbar-static-top">
@@ -173,7 +181,11 @@ AppAsset::register($this);
     </div>
   </section>
 </div>
+<<<<<<< HEAD
 
+=======
+<?=\common\onecms\PartnerWidget::widget();?>
+>>>>>>> 7a8b7d089007b8e390152c511b7569359845b627
 <footer class="footer">
     <div class="container">
         <p class="pull-left">

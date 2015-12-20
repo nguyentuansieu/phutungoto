@@ -37,6 +37,10 @@ return [
       'showScriptName' => false,
       'rules' => [
         '/' => 'site/index',
+<<<<<<< HEAD
+=======
+        '/lien-he' => '/site/contact',
+>>>>>>> 7a8b7d089007b8e390152c511b7569359845b627
         'thumbs/<path:.*>' => 'frontend/thumb',
         '<slug:[\w\-]+>' => 'page/view',
         'bai-viet/<slug:[\w\-]+>' => 'post/view',

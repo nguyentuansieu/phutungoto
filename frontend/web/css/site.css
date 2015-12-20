@@ -232,4 +232,24 @@ a.desc:after {
 
 .partner-item-heading a {
 	color: #333;
+<<<<<<< HEAD
+=======
+}
+
+.partner_bottom {
+    background: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.greeting {
+    margin-bottom: 0;
+    color: green;
+    text-transform: uppercase;
+    font-size: 105%;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 120%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+>>>>>>> 7a8b7d089007b8e390152c511b7569359845b627
 }

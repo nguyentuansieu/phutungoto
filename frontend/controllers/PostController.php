@@ -15,4 +15,11 @@ class PostController extends \frontend\controllers\FrontendController
         ]);
     }
 
+<<<<<<< HEAD
+=======
+    public function actionPartner() {
+        return $this->render('partner');
+    }
+
+>>>>>>> 7a8b7d089007b8e390152c511b7569359845b627
 }
