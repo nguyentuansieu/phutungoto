@@ -1,0 +1,23 @@
+{
+	"name": "sieulog/yii2-imagecache",
+	"description": "ImageCache for Yii2",
+	"keywords": ["yii2", "image", "resize", "thumb", "cache"],
+	"homepage": "https://github.com/sieulog/yii2-imagecache",
+	"type": "yii2-extension",
+	"authors": [
+		{
+			"name": "Kevin LEVRON",
+			"email": "kevin.levron@gmail.com"
+		},
+		{
+			"name": "Nguyen Tuan Sieu",
+			"email": "nguyentuansieu@gmail.com"
+		}
+	],
+	"require": {
+		"yiisoft/yii2-imagine": "*"
+	},
+	"autoload": {
+		"psr-4": {"iutbay\\yii2imagecache\\": ""}
+	}
+}
