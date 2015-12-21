@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\SearchForm;
 use Yii;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
@@ -8,6 +9,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\base\InvalidParamException;
+use yii\data\Pagination;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -208,6 +210,22 @@ class SiteController extends Controller
 
         return $this->render('resetPassword', [
             'model' => $model,
+        ]);
+    }
+
+    public function actionSearch($q) {
+        $model = new SearchForm();
+        $nodes = $model->searchProducts($q);
+        $count = $nodes->count();
+        $pagination = new Pagination(['totalCount' => $count]);
+        $nodes = $nodes->offset($pagination->offset)
+            ->limit(18)
+            ->orderBy(['id' => SORT_DESC])
+            ->all();
+        return $this->render('search', [
+            'title' => $q,
+            'nodes' => $nodes,
+            'pagination' => $pagination
         ]);
     }
 }

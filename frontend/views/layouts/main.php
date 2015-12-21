@@ -98,10 +98,12 @@ AppAsset::register($this);
         </ul>
         <div class="navbar-form navbar-right">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Tìm kiểm sản phẩm">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-            </span>
+              <form action="<?=\yii\helpers\Url::to('/tim-kiem'); ?>" method="get">
+                <input type="text" class="form-control" placeholder="Tìm kiểm sản phẩm" name="q">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                </span>
+              </form>
           </div><!-- /input-group -->
         </div>
       </div><!-- /.navbar-collapse -->
