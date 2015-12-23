@@ -250,3 +250,5 @@ a.desc:after {
     line-height: 120%;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+.navigation .navbar-inverse .navbar-form.navbar-right {width: 208px;}
